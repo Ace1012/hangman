@@ -1,8 +1,9 @@
 interface WordProps {
   currentWord: string;
+  guessedLetters:string[]
 }
 
-const Word = ({ currentWord }: WordProps) => {
+const Word = ({ currentWord, guessedLetters }: WordProps) => {
   return (
     <div className="word">
       {currentWord.split("").map((l, index) => (
@@ -11,7 +12,7 @@ const Word = ({ currentWord }: WordProps) => {
             width:"30px"
         }}>
           <span style={{
-            // visibility:"hidden",
+            visibility: guessedLetters.includes(l) ? "visible" : "hidden",
             textTransform:"uppercase",
             display:"flex",
             justifyContent:"center"

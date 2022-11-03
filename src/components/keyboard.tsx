@@ -1,15 +1,22 @@
 interface KeyboardProps {
   title: string;
   letters: string[];
+  addLetter:(letter:string) => void
 }
 
-const Keyboard = ({ title, letters }: KeyboardProps) => {
+const Keyboard = ({ title, letters, addLetter }: KeyboardProps) => {
   return (
     <div className="keyboard">
       <h1>{title}</h1>
       <div className="keyboard-btns">
-        {letters.map((l, index) => (
-          <button key={index} className="keyboard-btn" onClick={() => console.log(l)}>{l}</button>
+        {letters.map((letter, index) => (
+          <button
+            key={index}
+            className="keyboard-btn"
+            onClick={() => addLetter(letter)}
+          >
+            {letter}
+          </button>
         ))}
       </div>
     </div>

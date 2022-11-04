@@ -1,7 +1,6 @@
 *{
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
 }
 
 body{
@@ -16,7 +15,6 @@ body{
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   grid-auto-rows: fit-content;
-  /* justify-items: center; */
   border-bottom: 1px solid black;
 }
 
@@ -30,8 +28,25 @@ body{
   height: 100px;
 }
 
+.game-state button{
+  cursor: pointer;
+  color: black;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: fit-content;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-size:x-large;
+  font-weight: 600;
+  transition: all ease-in-out 100ms;
+}
+
+.game-state button:hover{
+  background-color: #212121;
+  color: beige;
+}
+
 .hangman-container{
-  /* background-color: red; */
   width: 100%;
   padding: 20px;
   position: relative;
@@ -166,18 +181,20 @@ body{
 }
 
 .keyboard-btn{
-  cursor: pointer;
+  cursor: not-allowed;
   text-transform: uppercase;
   width: 50px;
   height: 50px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border: none;
   background-color: grey;
   color: white;
   font-size: larger;
   transition: all ease-in-out 150ms;
 }
 
-.keyboard-btn:hover{
+.keyboard-btn:not(button:disabled):hover{
+  cursor: pointer;
   background-color: aquamarine;
   color: black;
 }
